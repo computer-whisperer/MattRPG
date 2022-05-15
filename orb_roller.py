@@ -15,17 +15,20 @@
 # roll_orbs({"blue": 45}) will have just added 5 extra rolls to the same deterministic output
 
 def main():
-    set_seeds(123)
+    set_seeds(1)
 
     # You can use randomized colors
-    color_rolls = roll_colors(100)
-    roll_orbs(color_rolls)
+    #color_rolls = roll_colors(100)
+    #roll_orbs(color_rolls)
 
     # Or you can just specify the color to use
-    roll_orbs({"blue": 30})
+    #roll_orbs({"blue": 30})
 
     # Or you can specify multiple colors to use
-    roll_orbs({"blue": 30, "red": 10})
+    #roll_orbs({"blue": 30, "red": 10})
+
+    color_rolls = roll_colors(100)
+    roll_orbs(color_rolls)
 
 
 color_weights = {
