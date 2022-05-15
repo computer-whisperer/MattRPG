@@ -35,7 +35,7 @@ color_weights = {
     "green": 1
 }
 
-# Ask Christian before editing stuff below this line
+# Think carefully before editing stuff below this line
 # =======================================================================================================================================
 
 import random
