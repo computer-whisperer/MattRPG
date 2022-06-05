@@ -21,13 +21,20 @@ def main():
     #color_rolls = roll_colors(100)
     #roll_orbs(color_rolls)
 
+    # You can use randomized colors of some selection
+    #color_rolls = roll_colors(100, ("red", "green", "blue"))
+    #roll_orbs(color_rolls)
+
     # Or you can just specify the color to use
     #roll_orbs({"blue": 30})
 
     # Or you can specify multiple colors to use
     #roll_orbs({"blue": 30, "red": 10})
 
-    color_rolls = roll_colors(100)
+    #color_rolls = roll_colors(100)
+    #roll_orbs(color_rolls)
+
+    color_rolls = roll_colors(100, ("red", "green", "blue"))
     roll_orbs(color_rolls)
 
 
@@ -97,12 +104,14 @@ def select_orb_id(rand, color):
         weights.append(orb_data["processed_weight"])
     return rand.choices(data, weights)[0]
 
-def roll_colors(n=1):
+def roll_colors(n=1, c=None):
+    if c is None:
+        c = color_weights.keys()
     rand = random.Random()
     rand.seed(seed_for_color_rolls)
     colors = []
     weights = []
-    for color in color_weights:
+    for color in c:
         colors.append(color)
         weights.append(color_weights[color])
     output = {}
